@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>JSON</title>
+</head>
+<body>
+	<div id="box1"></div>
+	<script type="text/javascript">
+		var contacto = {
+			"nombre" : "Jhordan",
+			"apellido" : "Escobar",
+			"edad" : 20,
+			"salario" : 3500
+		};
+
+		var cliente = "";
+		cliente += "<b>CONTACTO:</b> <br />"
+		cliente += "<b>Nombre:</b> " + contacto.nombre + "<br />";
+		cliente += "<b>Apellido:</b> " + contacto.apellido + "<br />";
+		cliente += "<b>Edad:</b> " + contacto.edad + "<br />";
+		cliente += "<b>Salario:</b> "	+contacto.salario + "<br />";
+
+		var elmento = document.getElementById("box1");
+		elmento.innerHTML = cliente;
+
+	</script>
+</body>
+</html>

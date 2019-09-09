@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>JSON2</title>
+</head>
+<body>
+	<div class="box1"></div>
+	<script type="text/javascript">
+		
+		var contacto = '{"nombre" : "Jhordan", "apellido" : "Escobar", "edad" : 20, "salario" : 3500}';
+		//DE STRING A JSON:
+		var contactoJSON = JSON.parse(contacto);
+		// document.write(typeof contactoJSON);
+
+		//DE JSON A STRING:
+		var contactoString = JSON.stringify(contactoJSON);
+		document.writeln(typeof(contactoString));
+	</script>
+</body>
+</html>

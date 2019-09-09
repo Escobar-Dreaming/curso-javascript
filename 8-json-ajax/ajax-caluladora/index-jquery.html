@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Calculadora</title>
+	<link rel="stylesheet" type="text/css" href="../../z-librerias/bootstrap.min.css">
+	<style type="text/css">
+		body{
+			background-color: #C0C0C0;
+		}
+
+		h1{
+			text-decoration: underline;		
+		}
+
+		.box1{
+			background-color: #AF6C6C;.
+			/*border: 1px solid #000;*/
+			width: 50%;
+			margin: 0 auto;
+			text-align: center;
+			margin-top: 200px;
+			box-shadow: 0 0 50px rgba(0,0,0,.8);
+		}
+
+		input[type='text']{
+			border-radius: 5px;
+			width: 300px;
+			height: 35px;
+			cursor: pointer;
+			background-color: #E4E4E4;
+			padding-left: 10px;
+			text-transform: capitalize;
+			/*font-variant: small-caps;*/
+		}
+		label{
+			font-size: 18px;
+			font-weight: 500;
+			letter-spacing: 2px;
+			text-indent: 10px;
+		}
+
+		input[type='text']:hover{
+			box-shadow: 0  0 10px rgba(0,0,0,0.7);
+		}
+	</style>
+			<script type="text/javascript" src="../../z-librerias/jquery-2.2.1.min.js"></script>
+</head>
+<body>
+	<div class="box1">
+		<br>
+		<h1>Calculadora:</h1>
+		<br>
+		<label for="id_num1">N°1:</label>&nbsp;&nbsp;<input type="text" name="name_num1" id="id_num1" placeholder="Ingrese N°.." autofocus="true" required><br><br>
+		<label for="id_num2">N°2:</label>&nbsp;&nbsp;<input type="text" name="name_num2" id="id_num2" placeholder="Ingrese N°.." autofocus="true" required><br><br>
+		<button id="id_calcular" class="btn btn-primary" name="">Calcular</button>
+		<div id="id_result"></div>
+		<br>
+	</div>
+	
+
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$("#id_calcular").click(function(){
+				var num1 = $('#id_num1').val()
+				var num2 = $('#id_num2').val()
+
+				var json_datos = {
+					"num1" : num1,
+					"num2" : num2
+				}
+
+				$.ajax({
+					data: json_datos,
+					url: 'procesar-jquery.php',
+					type: 'post',
+					beforeSend: function(){
+						$('#id_result').html("Procesando, espere por favor ...")
+					},
+					success: function(suma){
+						$('#id_result').html(suma)
+					}
+				})
+		})
+	})
+	</script>
+
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>AJAX</title>
+</head>
+<body>
+	<div id="box"></div>
+	<button onclick="ajax()">Peticion</button>
+	<script type="text/javascript">
+		
+		function ajax(){
+			
+			// if(window.XMLHttpRequest){
+			// 	ajaxRequest = new XMLHttpRequest();
+			// }else{//NAVEGADORES ANTIGUOS
+			// 	ajaxRequest = new ActiveXObject("Microsoft.XMLHTTP")
+			// }
+
+
+			//VALORES DE READYSTATE:
+			//0 → Peticion no ha  sido inicializada.
+			//1 → Peticion a sido establecida.
+			// 2 → Peticion a sido enviada.
+			//3 → Peticion esta siendo procesada.
+			//4 → Peticion ha sido finalizada.
+
+			//VALORES DE STATUS: CODIGO DE ESTADO DE RESPUESTA HTTP
+			// 200 → Peticion exitosa
+			
+			var ajaxRequest = new XMLHttpRequest();
+			ajaxRequest.onreadystatechange = function(){
+				if(ajaxRequest.readyState == 4 && ajaxRequest.status == 200){
+					var contactoJSON = JSON.stringy();
+					document.getElementById("box").innerHTML = ajaxRequest.responseText;
+				}
+			}
+
+			ajaxRequest.open("GET", "contacto.json", true);//METODO---DIRECCION DE API O FILE-- ASYNCRONA
+			ajaxRequest.send();
+
+		}
+	</script>
+
+
+</body>
+</html>

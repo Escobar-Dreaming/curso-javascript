@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		
+		function print(msg){
+			document.write(`${msg}<br />`)
+		}
+		//ALGORITMO FACTORIAL
+			// const factorial = (x) => {
+			// 	var mult = 1;
+			// 	for(let j = 1; j <= x; j++) {
+			// 		mult = mult*j
+			// 	}
+			// 	return mult
+			// }
+			// //PRIMEROS 100 FACTORIALES
+			// const factorial100 = () =>{
+			// 	for(let i = 1; i < 1000; i++){
+			// 		console.log(factorial(i))
+			// 	}
+			// }
+
+		// var x = 2;
+
+		// //IMPRIMIR PARES E IMPARES
+			// for(let i = 0 ;i < 10;i++){
+
+			// 	if(i % 2 == 0){
+			// 		print(`Par: ${i}`)
+				
+			// 	}else if(i % 2 != 0){
+			// 		print(`Impar: ${i}`)
+			// 	}
+			// 		var y = ++x;
+			// 		print(`${y}`)
+			// }	
+
+		var nums = [1, 2, 3, -5, 8]
+		// //N° MENOR
+		// 	for (let i = 0; i < nums.length; i++) {
+		// 		let mayor = 0
+		// 		let menor = 0
+
+		// 		if(nums[i] > nums[i+1]){
+		// 			mayor = nums[i]
+		// 			menor = nums[i+1]
+		// 			print(`El número menor es: ${menor}`)
+		// 		}
+		// 	}
+		// //N° MAYOR
+		// 	for(let i = 0; i < nums.length; i++){
+		// 		var mayorr = 0
+				
+		// 		if(nums[i] > mayorr){
+		// 			mayorr = nums[i]
+
+		// 		}
+		// 	}
+		// 	print(mayorr)
+
+		//NUMERO MAYOR Y MENOR CON MATH
+		var mayor = Math.max(...nums)
+		var menor = Math.min(...nums)
+			
+		print(`El número menor es: ${menor} <br /> El número mayor es: ${mayor}`)
+		
+
+
+
+
+		
+
+
+
+
+		// factorial100()
+
+
+
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+[
+
+	{
+		"nombre" : "Jhordan",
+		"apellido" : "Escobar",
+		"edad" : 21,
+		"salario" : 3500
+	},
+	{
+		"nombre" : "Juan",
+		"apellido" : "Camiloaga",
+		"edad" : 22,
+		"salario" : 4500
+	},
+	{
+		"nombre" : "Jhon",
+		"apellido" : "Meza",
+		"edad" : 23,
+		"salario" : 2500
+	}
+]

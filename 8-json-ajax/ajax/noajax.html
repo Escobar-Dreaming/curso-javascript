@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>NoAjax</title>
+</head>
+<body>
+	<div id="box"></div>
+	<button onclick="consumirJSON()">Leer JSON</button>
+	<script type="text/javascript">
+		
+		var elmento = document.getElementById("box");
+		function consumirJSON(){
+
+			var contacto = {
+				"Nombre" : "Jhordan",
+				"Apellido" : "Escobar",
+				"Edad" : 23,
+				"Sueldo" : 3500
+			};
+
+
+			for(var i in contacto){
+				var contactoString = "<b>"+i+"</b>"+": "+contacto[i]+"<br />";
+				elmento.innerHTML += contactoString;
+			}
+
+
+
+		}
+
+	</script>
+</body>
+</html>

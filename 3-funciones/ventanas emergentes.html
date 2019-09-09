@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Ventanas Emergentes</title>
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+</head>
+<body>
+
+
+<script type="text/javascript">
+
+	//FUNCTION PRINT
+		function print(mensaje){
+			document.write(mensaje);
+		}
+
+
+	//PEDIR NOMBRE Y EDAD
+		// let nombre = prompt("Ingresa tu nombre");
+		// let edad = prompt("Ingresa tu edad");
+		// let resultado = "Tu nombre es "+nombre+" y tu edad es "+edad;
+		// alert(resultado);
+
+	//SALUDO POR INGRESAR A LA PAGINA
+	 Swal.fire({
+		title: 'Elige!',
+		text: "¿Deseas Ingresar a la Página?",
+		type: 'success',
+		showCancelButton: true,
+		confirmButtonColor: '#3085d6',
+		cancelButtonColor: '#d33',
+		confirmButtonText: 'Sí, deseo Ingresar!'
+		// closeOnConfirm: false,
+		// closeOnCancel: false});
+	}).then((result) => {
+		if (result.value) {
+			print("<h2>Bienvenido a la Web</h2>")
+		}else{
+			Swal.fire('Saliste de la Página!!')
+		}
+	})
+
+
+</script>
+</body>
+</html>

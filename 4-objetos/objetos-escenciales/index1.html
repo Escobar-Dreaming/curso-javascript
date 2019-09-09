@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Objetos Especiales</title>
+</head>
+<body>
+	<script type="text/javascript">
+		function print(mensaje){
+			document.write(mensaje+"<br />");
+		}
+
+
+
+		//ARRAYS
+			print("<b>Arreglo nombres:</b>")
+			var nombres = new Array("Jhordan", "Manuel");
+			var contactos = ["Pedro", "Juan"];
+			//RECORRIENDO ARRAY:
+			for (let i = 0; i <= nombres.length - 1 ; i++) {
+				print("nombres["+i+"]: "+nombres[i])
+			}
+
+			print("<b>Arreglo contactos:</b>")
+			for(let i in contactos){
+				print("contactos["+i+"]: "+contactos[i]);
+			}
+		//MATH
+			print("<b>El Objeto Math:</b>")
+			print('PI:') 
+			print(Math.PI)
+			print(Math.sqrt(81))
+			print(Math.floor(Math.random()*10))
+
+		//DATE
+		function Hi(){
+			print("Hi")
+		}
+		// setInterval(Hi, 2000);
+
+		function horaActual(){
+			var fecha = new Date();
+
+			var hora = fecha.getHours();
+			var min = fecha.getMinutes();
+			var sec = fecha.getSeconds();
+			var result = hora+":"+min+":"+sec 
+			print("<b>Hora: </b>"+result)
+
+		}
+		setInterval(horaActual, 1000)
+
+
+
+	</script>
+</body>
+</html>

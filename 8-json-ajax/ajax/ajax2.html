@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>ajax2</title>
+</head>
+<body>
+	<div id="box"></div>
+	<button onclick="ajax()">Peticion JSON</button>
+	<button onclick="ajax2()">Peticion JSON Array</button>
+	<button onclick="ajax3()">Peticion JSON Nested</button>
+	<button onclick="ajax4()">Encontrar la Edad menor</button>
+	<br>
+	<label><b>Buscar Persona:</b></label>
+	<input type="text" onkeyup="" name="name_buscar">
+
+	<!-- AJAX 1 -->
+	<script type="text/javascript">
+		var resultado = document.getElementById("box");
+		function ajax(){
+			// Inicializo la Peticion:
+				var ajaxRequest = null;
+
+			// Valido la Peticion acorde al Navegador: 
+				if(window.XMLHttpRequest){//NAVEGADOR CHROME
+					ajaxRequest = new XMLHttpRequest();
+				}else{//NAVEGADORES ANTIGUOS: EXPLORER
+					ajaxRequest = new ActiveXObject("Microsoft.XMLHTTP");
+				}
+
+			ajaxRequest.onreadystatechange = function(){
+				if(ajaxRequest.readyState == 4 && ajaxRequest.status == 200){
+					var contactoJSON = JSON.parse(ajaxRequest.responseText);
+					for(var i in contactoJSON){
+						var contactoo = "<b>"+i+"</b>" + ": " +contactoJSON[i]+"<br />";
+						resultado.innerHTML += contactoo ;
+					}
+				}
+			}
+
+			ajaxRequest.open("GET", "contacto.json", true);
+			ajaxRequest.send();
+
+
+		}
+	</script>
+	<!-- AJAX 2 -->
+	<script type="text/javascript">
+		
+		var elmento = document.getElementById("box");
+		function ajax2(){
+			var ajaxRequest = null;
+			ajaxRequest = new XMLHttpRequest();
+
+			ajaxRequest.onreadystatechange = function (){
+				if(ajaxRequest.readyState == 4 && ajaxRequest.status == 200){
+
+					var contactoArrayJSON =  JSON.parse(ajaxRequest.responseText);
+
+					// alert(ajaxRequest.responseText);
+					for(var i in contactoArrayJSON){
+						var contactito = contactoArrayJSON[i];
+						for(var j in contactito){
+							elmento.innerHTML += "<b>"+j+"</b>: "+contactito[j]+"<br />"; 
+						}
+					}
+
+				}
+
+			}
+
+
+
+
+			ajaxRequest.open("GET", "contactoArray.json", true);
+			ajaxRequest.send();
+		}
+	</script>
+	<!-- AJAX 3 -->
+	<script type="text/javascript">
+		var elmento = document.getElementById("box");
+		function ajax3(){
+
+			var ajaxRequest = null;
+			ajaxRequest = new XMLHttpRequest();
+
+			ajaxRequest.onreadystatechange = function (){
+				if(ajaxRequest.readyState == 4 && ajaxRequest.status == 200){
+
+					var contactoArrayJSON =  JSON.parse(ajaxRequest.responseText);
+
+					// alert(ajaxRequest.responseText);
+					for(var i in contactoArrayJSON){
+						var contactito = contactoArrayJSON[i];
+						for(var j in contactito){
+							elmento.innerHTML += "<b>"+j+"</b>: "+contactito[j]+"<br />"; 
+						}
+					}
+
+				}
+
+			}
+
+			ajaxRequest.open("GET", "contactoNested.json", false);
+			ajaxRequest.send();
+
+		}
+	</script>
+
+	<!-- AJAX 4 -->
+	<script type="text/javascript">
+		
+		var caja = document.getElementById("box");
+		
+		function ajax4(){
+			var ajaxRequest = null;
+			ajaxRequest = new XMLHttpRequest();
+
+			ajaxRequest.onreadystatechange = function(){
+				if(ajaxRequest.readyState == 4 && ajaxRequest.status == 200){
+					var contacto = JSON.parse(ajaxRequest.responseText);
+					
+					var edades = extraerEdadMenor(contacto);
+
+					var edadMenor = edades[0];
+					for (var i = 0; i < edades.length; i++) {
+						if(edades[i] < edadMenor){
+							edadMenor = edades[i];
+						}
+					}
+
+					caja.innerHTML += edadMenor;
+					// console.log(edadMenorr);	
+				}	
+
+			}
+			ajaxRequest.open("GET", "contactoArray.json", true);
+			ajaxRequest.send();
+		}
+
+
+		function extraerEdadMenor(contactoJSON){
+			var edades = [];
+			for(var i in contactoJSON)
+			{
+				var persona = contactoJSON[i];
+				edades.push(persona.edad)
+			}
+			return edades;
+		}
+
+</script>
+</body>
+</html>

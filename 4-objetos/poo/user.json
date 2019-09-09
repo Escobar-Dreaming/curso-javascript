@@ -1,0 +1,18 @@
+ {
+
+	"user":[
+		{
+			"user": "jhordan",
+			"password": 123,
+			"email" : "jhordan_escobar@outlook.com"	
+		},
+		{
+			"user": "juan",
+			"password": 234,
+			"email" : "juan@outlook.com"	
+		}
+
+	]
+
+	
+}

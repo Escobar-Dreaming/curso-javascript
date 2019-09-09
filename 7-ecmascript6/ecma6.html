@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>EcmaScript 6</title>
+</head>
+<body>
+	<script type="text/javascript">
+		
+		function print(msg){
+			document.write(msg+'<br />')
+		}
+
+
+
+		//VARIABLES
+		var a = 4
+		let b = 5
+		const pi = Math.PI
+		//Template Literals
+		var nombre = `Jhordan`
+		var edad = 22
+		var result = `Hola tu nombre es ${nombre} y tienes ${edad} años.`;
+		print(result)
+
+
+		//FUNCIONES
+		const suma = (x, y) =>{
+			let z = x+ y
+			return z
+		} 
+
+		const saludo = (name, edad) =>{
+			let paint = `Bienvenido ${name} tu edad dentro de un año sera ${edad +1}`
+			return paint
+		}
+		print(suma(2, 5))
+		print(saludo('Jhordan', 22))
+
+
+
+
+
+
+
+
+	</script>
+</body>
+</html>

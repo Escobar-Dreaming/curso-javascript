@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Arrays</title>
+</head>
+<body>
+	<h1>Arrays:</h1>
+	
+	<script>
+		
+		function print(a){
+			document.write(a+`<br />`);
+		}
+		//OBJETOS DE EJEMPLO
+			// var sacha = {
+			// 	nombre: 'Sacha',
+			// 	apellido: 'Lifztik',
+			// 	edad: 17,
+			// 	altura: 1.70,
+			// 	cantidadLibros: 25
+			// }
+
+			// var jhordan = {
+			// 	nombre: 'Jhordan',
+			// 	apellido: 'Escobar',
+			// 	edad: 23,
+			// 	altura: 1.83,
+			// 	cantidadLibros: 34
+			// }
+
+			// var pedro = {
+			// 	nombre: 'Pedro',
+			// 	apellido: 'Paramo',
+			// 	edad: 24,
+			// 	altura: 1.84,
+			// 	cantidadLibros: 67
+			// }
+
+
+		//COLECCION DE OBJETOS
+		// var personas = [sacha, jhordan, pedro]
+		// console.log('**Colección de personas:**')
+		// console.log(personas)
+			//EL FOR IN => INDICE
+			// for(let i in personas){
+			// 	print(personas[i].nombre)
+			// 	print(personas[i].apellido)
+			// 	print(personas[i].edad)
+			// }
+
+			// EL FOR ME DA EL INDICE
+			// for(let i = 0;i < personas.length; i++){
+			// 	print(personas[i].nombre)
+			// 	print(personas[i].apellido)
+			// 	print(personas[i].edad)
+			// }
+			//EL FOR OF ME DA EL ELEMENTO
+			// for(let i of personas){
+			// 	print(i.nombre)
+			// 	print(i.apellido)
+			// 	print(i.edad)
+			// }
+
+
+		//FILTRAR UN ARRAY	
+			// const esMayor = (persona) =>{
+				
+			// 	return persona.edad > 22
+			// }
+
+			// const pasarAlturaCms = (persona) =>{
+			// 	// persona.altura *= 100
+			// 	// return persona
+
+			// 	return{
+			// 		...persona,
+			// 		altura: persona.altura * 100
+			// 	}
+			// }
+
+			// var personasMayores = personas.filter(esMayor)
+			// console.log('**Personas Mayores:**')
+			// console.log(personasMayores)
+
+		//TRANSFORMAR UN ARRAY
+			// var personasCms = personas.map(pasarAlturaCms)
+			// console.log('**Personas a Cms:**')
+			// console.log(personasCms)
+
+
+		//REDUCIR UN ARRAY A UN VALOR
+			// var acum = 0
+			// for(let i = 0 ; i < personas.length ; i++){
+			// 	acum = acum + personas[i].cantidadLibros
+			// }
+			// console.log(`El total de Libros es: ${acum}`)
+
+		//METODOS DE LOS ARRAYS
+			var array1 = [1,2,3]
+			var array2 = ['Jhordan']
+
+			//Old Style
+			// var fusionArray = array1.concat(array2)
+			//EcmaScript 6
+			var fusionArray = [...array1, ...array2]
+			print(fusionArray)
+	</script>
+</body>
+</html>

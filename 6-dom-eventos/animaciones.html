@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Animaciones</title>
+</head>
+<body>
+	<h1>Animacion:</h1>
+	<div id="id_box1">
+		<div id = "id_box2"></div>
+	</div>
+	
+
+	<script type="text/javascript">
+		
+		var box1 = document.getElementById('id_box1');
+		var box2 = document.getElementById('id_box2');
+
+		box1.style.width = '200px'
+		box1.style.height = '200px'
+		box1.style.backgroundColor = '#452994'
+		box1.style.position = 'relative'
+
+		box2.style.width = '50px'
+		box2.style.height = '50px'
+		box2.style.backgroundColor = '#AE1F1F'
+		box2.style.position = 'absolute'
+
+
+		var pos_left = 0
+		var pos_top = 0
+		var pos_right = 150
+		var pos_down = 150
+		const move = () => {
+			if(pos_left == 150){
+				if(pos_top < 150){
+					pos_top += 1
+					box2.style.top = pos_top+"px"
+				}
+				if(pos_top >= 150){
+					pos_right -= 1
+					box2.style.left = (pos_right)+"px"				
+				}
+				if(pos_right == 0){
+					pos_top = 0
+					pos_down -= 1
+					box2.style.top = pos_down+"px"
+					if(pos_down == 0){
+						clearInterval(cronometro)
+					}
+				}	
+			}else{
+				pos_left +=1
+				box2.style.left = pos_left+"px"
+				
+			}
+		}
+		
+		var cronometro = setInterval(move, 10)
+
+
+
+	</script>
+	
+</body>
+</html>

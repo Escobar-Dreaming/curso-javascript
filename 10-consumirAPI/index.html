@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Consumir SWIPO</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<script type="text/javascript" src="../z-librerias/jquery-2.2.1.min.js"></script>
+	
+	<script type="text/javascript">	
+		const API_URL = 'https://swapi.co/api/'
+		const PEOPLE_URL = 'people/:id'
+		
+		// const lukeUrl = `${API_URL}${PEOPLE_URL.replace(':id', 1)}`
+		const opts = {crossDomain: true}
+			
+		const response = (persona) => {
+			console.log(`Hola yo soy, ${persona.name}`)
+		}
+
+
+		function obtenerPersonaje(id){
+			const url = `${API_URL}${PEOPLE_URL.replace(':id', id)}`
+			$.get(url, opts, response)
+		}
+
+		function obtener100(){
+
+			for(let i = 0; i < 100; i++){
+				if(i != undefined){
+					const url = `${API_URL}${PEOPLE_URL.replace(':id', i)}`
+					$.get(url, opts, response)
+				}
+			}
+		}
+
+
+		
+		
+
+
+
+
+		factorial100()
+		// obtener100()
+		// obtenerPersonaje(1);
+		// obtenerPersonaje(2);
+
+
+
+
+	</script>
+
+
+</head>
+<body>
+	
+
+
+	
+</body>
+</html>
